@@ -1,0 +1,31 @@
+In the systemd utility, a service is referred to as a unit.
+
+A unit is any resource that the system knows how to act on and administrate. 
+A unit is the principal object that the systemd tools know how to address. 
+
+These assets are defined in a configuration file called a unit file.
+
+Using systemctl we can check the status of any systemd service on the managed dedicated server.
+Provides information about a service, running state, details about it, ...
+
+There are obviously more things we can make with systemctl:
+
+Starting or stopping a service: [systemctl start/stop servicename(.service)]
+
+Restarting or realoading a service: [systemctl restart/reload servicename(.service)]
+
+Enable or disable a service : [systemctl enable/disable servicename(.service)]
+
+-------------------------------------------------------------------------------------------------------------------------
+
+What is an unit file?
+
+A unit file is a flat text file that contains information about a service, socket, device, mount point, swap file, partition, start-up target, an asset management slice, or a group of externally created processes,
+
+Displaying all the active systemd services on your server: [systemctl list-units (--all)]
+
+We can also manually create a Unit File, but I will stop here, however, I will leave a link here where I copypasted all the information of this guide along with the guide to create unit files:
+
+https://www.liquidweb.com/kb/what-is-systemctl-an-in-depth-overview/
+
+Have a good day!
