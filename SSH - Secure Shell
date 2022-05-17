@@ -1,0 +1,19 @@
+Secure Shell/SSH is a network communication protocol that enables two computers to communicate and share data.
+
+This type of connection is encrypted between the two computers, meaning that is suitable for use on insecure networks.
+
+SSH if often used to 'login' and perform operations on remote computers, but it may also be used for transferring data.
+
+SSH is basically a program that connects to a servers and transfers data between 2 computers, using either graphical user interface or command line.
+
+We can install its service through apt with: [apt-get install openssh-server]
+
+We can see if we installed the right ssh packages with : dpkg -l | grep ssh
+
+We can see if ssh is working with : [systemctl status ssh]
+
+We can connect from another computer with : [ssh -p <portnumber> <user>@<ipadress>]
+
+Whenever we connect from another computer the operating system will work as usual, if we have not made any changes to the configuration regarding to this, we will indeed be able to connect with our user and type the password if it has one.
+
+If we want to stop the SSH server we will have to run one of these : [systemctl stop ssh] / [systemctl disable ssh]
