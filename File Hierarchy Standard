@@ -1,0 +1,17 @@
+Every UNIX directory structure is like a tree, the base of the file ssystem hierarchy begins at the root "/".
+
+Directories branch off the root, but everything starts at root.
+
+Let's start talking about the subdirectories of root:
+
+/bin : Directory where you wil find binary o executable files. (Programs, applications, commands, ...)
+
+/etc : Directory where configuration lives, these files control how the system or programs behave.
+
+/home : Directory where user home directories are located, these subdirectories allow users to have their own data and separate it from other users.
+
+/opt : Directory where optional and third party software live, software that is not bundled with the operating system will be often installed in /opt.
+
+/tmp = Directory where temporary space is allocated, most linux distributions clear its content at boot time, it is not a good idea to keep important files there.
+
+/usr = Directory where several subdirectories are stored, they contain UNIX commands and data files.
