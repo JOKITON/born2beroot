@@ -1,0 +1,24 @@
+Cron is a job scheduler on Unix-like operations systems.
+
+Users who set up and mantain software enviroments use cron to schedule jobs to run periodically at fixed times.
+
+It can be used to automate system mainentance or administration, downloading files from the internet, ...
+
+Cron is most suitable for scheduling repetitive tasks. In case we want to schedule one-time tasks we can use the associated "at" utility.
+
+The actions of cron are driven by a crontab (cron table) file, a configuration file that specifies shell commands to run periodically on a given schedule. These files are stored where the lists of jobs and other instructions to the cron daemon are kept. : [/var/spool/cron/crontabs]
+
+Therefore, you can also find in the [/etc/cron.d] file that contains the different system cronjobs stored for different users.
+
+To create a crontable you need to execute "crontab -e" to edit the default file, write the interval of time you want to use for the ".sh" to be executed along with the shell command you want to execute.
+
+This is a perfect representation of the line should be typed:
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of the month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                   7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * * <command to execute>
