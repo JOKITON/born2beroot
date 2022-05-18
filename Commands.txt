@@ -2,20 +2,25 @@ Commands to use when evaluated:
 
 HOSTANME CHANGE:  sudo vi /etc/hostname -> sudo vi /etc/hosts -> sudo reboot
 
-GROUPS: sudo addgroup <group> -> sudo groupadd <user> <group> -> SUDO getent group <group>
+GROUPS: Some groups need to be created: sudo, user42. At least the user with login needs to be in both.
+        sudo addgroup <group> -> sudo groupadd <user> <group> -> SUDO getent group <group>      
         sudo groupdel <group> -> sudo deluser <user> <group>  -> SUDO getent group <group>/<user>
 
-USERS: sudo adduser <user> -> SUDO getent user <user>
-       sudo deluser <user> -> SUDO getent user <user>
+USERS: An user with the login name has to exist.
+        sudo adduser <user> -> SUDO getent user <user>
+        sudo deluser <user> -> SUDO getent user <user>
        
-SSH:
+SSH: Secure Shell, program used to access remote systems with safety.
+        service ssh status / reload / stop / start / force-reaload / restart
+        ssh -p <port> <username>@<ipadress>
 
+UFW: Uncomplicated FIREWALL, a program that checks the activity going on and can take action if necessary.
+        service ufw status / reload / stop / start / force-reaload / restart
+        sudo ufw enable / disable / allow/deny <port> / status / reset / delete <number>
 
-UFW:
-
-
-MARIADB:
-
+MARIADB: DataBase Manager where we will create a database linked with an specific user.
+         sudo mariadb -> show databases; / drop database <database> -> grant all on <database> ...
+         mysql -u [username] -p[password]
 
 FTTP:
 
@@ -23,10 +28,19 @@ FTTP:
 LIGHTTPD:
 
 
-WORDPRESS:
+MONITORING.SH: Shell Script executed by crontab every 10 minutes.
+        Location : /root/monitoring.sh
 
+SUDOERS: Group of certain users capable of executing commands with "sudo".
+        su <user>
+        Location : etc/sudoers.d/sudoconfig
+        Log Location: var/log/sudo/sudo_log
 
-SUDOERS:
-
-
-CRON:
+CRON: SUDO crontab -e -> located in /var/spool/crontabs
+        field          allowed values
+              -----          --------------
+              minute         0-59
+              hour           0-23
+              day of month   1-31
+              month          1-12 (or names, see below)
+              day of week    0-7 (0 or 7 is Sunday, or use names)
