@@ -1,0 +1,40 @@
+Service:
+[Service] is an "high-level" command used for start, restart, stop and status services in different Unixes and Linuxes. 
+Depending on the "lower-level" service manager, service redirects on different binaries.
+
+For example, on CentOS 7 it redirects to [systemctl], while on CentOS 6 it directly called the relative [/etc/init.d] script. 
+On the other hand, in older Ubuntu releases it redirects to upstart.
+
+Service is adequate for basic service management, while directly calling [systemctl] give greater control options.
+
+Synopsis : [service] COMMAND [OPTIONS...]
+
+Concepts:
+  Service runs a System V init script or systemd unit in as predictable an enviroment as possible, removing most enviroment variables and with the current working directory set to /.
+  
+  The SCRIPT parameter in synopsis specifies a System V init cript, located in /etc/init.d/SCRIPT, or the name of a systemd unit. The existence of a systemd unit of the same name as script in /etc/init.d will cause the unit to take precendence over the init.d script.
+  
+  The supported values of COMMAND parameter in synopsis depend on the invoked script. Service command passes COMMAND and OPTIONS parameter to the init script unmodified.
+  
+  For systemd units, start, stop, status, and reload are passed through to their systemctl/initctl equivalents.
+
+-------------------------------------------------------------------------------------------------------------------------
+SystemCTL:
+Using systemctl, we can check the status of any systemd service on the managed dedicated server. 
+
+The status command provides information about a service. It also lists the running state, or detail on why it is not running, or if a service has been stopped unintentionally.
+
+Synopsis : [systemctl] [OPTIONS...] COMMAND [UNIT..]
+
+It basically controls the systemd system and service manager.
+
+What is systemd?
+
+Systemd is a system and service manager for Linux operating systems.
+When run as first process as boot, it acts as init system that brings up and mantains userspace services.
+Separate instances are started for logged-in users to start their services.
+
+Concepts:
+  Systemd provides a dependency system between various entities called "units" of 11 different types.
+  Units encapsulate various objects that are relevant for system boot-up and mainetance.
+  The majority of units are configured in unit configuration files, whose sintax and basic set of options is described in       systemd.unit(5), however some are created automatically from other configuration files, dinamically from system state or       programmatically at runtime.
