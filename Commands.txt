@@ -1,0 +1,32 @@
+Commands to use when evaluated:
+
+HOSTANME CHANGE:  sudo vi /etc/hostname -> sudo vi /etc/hosts -> sudo reboot
+
+GROUPS: sudo addgroup <group> -> sudo groupadd <user> <group> -> SUDO getent group <group>
+        sudo groupdel <group> -> sudo deluser <user> <group>  -> SUDO getent group <group>/<user>
+
+USERS: sudo adduser <user> -> SUDO getent user <user>
+       sudo deluser <user> -> SUDO getent user <user>
+       
+SSH:
+
+
+UFW:
+
+
+MARIADB:
+
+
+FTTP:
+
+
+LIGHTTPD:
+
+
+WORDPRESS:
+
+
+SUDOERS:
+
+
+CRON:
