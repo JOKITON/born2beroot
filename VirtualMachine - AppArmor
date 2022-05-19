@@ -1,0 +1,13 @@
+APPARMOR:
+
+AppArmor is a security module of kernel Linux that lets the administatror of a system limit the features of a program.
+To declare the restrictions creates for every program a security profile.
+
+It is similar to SELinux, although, it works in a different way.
+It restricts the actions that processes can do, for example, a PDF viewfinder only is given access to its mandatory tools for its performance.
+
+Command : SUDO apparmor-status
+
+VIRTUAL MACHINE:
+
+A virtual machine is a software able to load a system inside another operative system.
