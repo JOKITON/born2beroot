@@ -20,7 +20,8 @@ UFW: Uncomplicated FIREWALL, a program that checks the activity going on and can
 
 MARIADB: DataBase Manager where we will create a database linked with an specific user.
          sudo mariadb -> show databases; / drop database <database> -> grant all on <database> ...
-         mysql -u [username] -p[password]
+         sudo mysql_secure_installation -> Start interactive script to remove insecure default settings.
+         (( mysql -u [username] -p[password] ))
 
 PHP: Hypertext Preprocessor, open source code language useful for web programming.
 
@@ -29,7 +30,6 @@ LIGHTTPD: Web server aiming to be light, secure ... Easy configuration and good 
         By installing it Debian will enable a set of modules, it needs to use the port number 80!
         Uses the path: "/var/www/html" as webroot.
         Modules conf: "etc/lighttpd/conf-available/" / "etc/lighttpd/conf-enabled/"
-
 
 MONITORING.SH: Shell Script executed by crontab every 10 minutes.
         Location : /root/monitoring.sh
